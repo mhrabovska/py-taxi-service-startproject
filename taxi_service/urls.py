@@ -17,6 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib import admin
+from django.urls import path
+from taxi.views import taxi_view  # Імпортуємо функцію з views.py додатку taxi
+from taxi.views import table_view
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('taxi/', taxi_view, name='taxi'),  # Додаємо маршрут для /taxi/
+    path('', taxi_view, name='home'),
+    path('tables/', table_view, name='tables'),
 ]

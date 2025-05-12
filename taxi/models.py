@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
 class Manufacturer(models.Model):
@@ -21,6 +21,8 @@ class Car(models.Model):
 
 class Driver(AbstractUser):
     license_number = models.CharField(max_length=20, unique=True)
+    groups = models.ManyToManyField(Group, related_name="driver_groups")
+    user_permissions = models.ManyToManyField(Permission, related_name="driver_permissions")
 
     def __str__(self):
         return self.username
