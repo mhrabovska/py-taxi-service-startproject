@@ -1,6 +1,3 @@
-with open(".gitignore", "w") as gitignore:
-    gitignore.write("# Автоматично створений файл\n__pycache__/\n*.pyc\n")
-
 
 # Ігнорування папок та файлів віртуального середовища
 venv/

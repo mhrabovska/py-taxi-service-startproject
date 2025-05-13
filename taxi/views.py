@@ -11,7 +11,7 @@ def table_view(request):
     drivers = Driver.objects.all()
     cars = Car.objects.all()
     manufacturers = Manufacturer.objects.all()
-    return render(request, 'table_view.html', {
+    return render(request, 'taxi/table_view.html', {
         'drivers': drivers,
         'cars': cars,
         'manufacturers': manufacturers
